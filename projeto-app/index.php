@@ -83,10 +83,7 @@ $corretores = buscarCorretores();
         <h1>Cadastro</h1>
         
         <form action="index.php" method="POST">
-    <div class="form-group">
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" maxlength="11" value="<?= htmlspecialchars($cpf) ?>" required>
-    </div>
+    
     
     <div class="form-row">
         <div class="form-group">
