@@ -26,7 +26,7 @@ if (isset($_GET['edit'])) {
         $action = 'update';
         $buttonText = 'Salvar';
     } else {
-        $message = "Corretor não encontrado!";
+        $message = "Cadastro não encontrado!";
     }
 }
 
@@ -40,16 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($action == 'update') {
             // Atualizar o corretor
             if (atualizarCorretor($id, $name, $cpf, $creci)) {
-                $message = "Corretor atualizado com sucesso!";
+                $message = "cadastro atualizado com sucesso!";
             } else {
-                $message = "Erro ao atualizar corretor.";
+                $message = "Erro ao atualizar cadastro.";
             }
         } else {
             // Inserir um novo corretor
             if (inserirCorretor($name, $cpf, $creci)) {
-                $message = "Corretor cadastrado com sucesso!";
+                $message = "cadastrado com sucesso!";
             } else {
-                $message = "Erro ao cadastrar corretor.";
+                $message = "Erro ao cadastrar.";
             }
         }
     } else {
@@ -61,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     if (excluirCorretor($id)) {
-        $message = "Corretor excluído com sucesso!";
+        $message = "cadastro excluído com sucesso!";
     } else {
-        $message = "Erro ao excluir corretor.";
+        $message = "Erro ao excluir cadastro.";
     }
 }
 
@@ -75,12 +75,12 @@ $corretores = buscarCorretores();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Corretores</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Cadastro de Corretores</h1>
+        <h1>Cadastro</h1>
         
         
         <form action="index.php" method="POST">
@@ -112,7 +112,7 @@ $corretores = buscarCorretores();
             <div class="message"><?= htmlspecialchars($message) ?></div>
         <?php endif; ?>
 
-        <h2>Lista de Corretores</h2>
+        <h2>Lista de Cadastros</h2>
         <table>
             <thead>
                 <tr>
