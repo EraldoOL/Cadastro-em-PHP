@@ -30,12 +30,32 @@ label {
     color: #333;
 }
 
+/* Alinha os campos CPF e CRECI lado a lado */
+.form-group-inline {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
 input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+}
+
+/* Estilos específicos para os campos CPF e CRECI */
+#cpf {
+    width: 40%; /* CPF com 40% de largura */
+}
+
+#creci {
+    width: 55%; /* CRECI com 55% de largura */
+}
+
+#name {
+    width: 100%; /* Nome ocupa 100% da largura */
 }
 
 button {
@@ -78,8 +98,18 @@ th {
     border-radius: 4px;
 }
 
+/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
     .form-group, button {
         font-size: 14px;
+    }
+
+    .form-group-inline {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #cpf, #creci {
+        width: 100%;
     }
 }
