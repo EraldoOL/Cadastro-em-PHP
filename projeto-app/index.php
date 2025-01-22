@@ -64,29 +64,34 @@ $corretores = buscarCorretores();
 
         <h2>Lista de Corretores</h2>
         <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Creci</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($corretores as $corretor): ?>
-                    <tr>
-                        <td><?= $corretor['id'] ?></td>
-                        <td><?= htmlspecialchars($corretor['name']) ?></td>
-                        <td><?= htmlspecialchars($corretor['cpf']) ?></td>
-                        <td><?= htmlspecialchars($corretor['creci']) ?></td>
-                        <td>
-                            <a href="index.php?delete=<?= $corretor['id'] ?>" class="delete">Excluir</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>CRECI</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        // Buscar os dados dos corretores no banco
+        $stmt = $pdo->query("SELECT * FROM corretores");
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['cpf'] . "</td>";
+            echo "<td>" . $row['creci'] . "</td>";
+            echo "<td>
+                <a href='?edit=" . $row['id'] . "'>Editar</a> | 
+                <a href='?delete=" . $row['id'] . "'>Excluir</a>
+            </td>";
+            echo "</tr>";
+        }
+        ?>
+     </tbody>
+    </table>
     </div>
 </body>
 </html>
