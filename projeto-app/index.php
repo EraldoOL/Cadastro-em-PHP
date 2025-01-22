@@ -82,7 +82,6 @@ $corretores = buscarCorretores();
     <div class="container">
         <h1>Cadastro</h1>
         
-        
         <form action="index.php" method="POST">
     <div class="form-group">
         <label for="cpf">CPF:</label>
@@ -107,6 +106,7 @@ $corretores = buscarCorretores();
 
     <button type="submit"><?= $buttonText ?></button>
 </form>
+        
 
         <?php if ($message): ?>
             <div class="message"><?= htmlspecialchars($message) ?></div>
