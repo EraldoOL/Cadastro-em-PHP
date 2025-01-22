@@ -77,3 +77,9 @@ th {
     border: 1px solid #c3e6cb;
     border-radius: 4px;
 }
+
+@media (max-width: 600px) {
+    .form-group, button {
+        font-size: 14px;
+    }
+}
