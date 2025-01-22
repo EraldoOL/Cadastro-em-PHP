@@ -84,20 +84,22 @@ $corretores = buscarCorretores();
         
         <!-- Formulário de cadastro/edição -->
         <form action="index.php" method="POST">
-            <div class="form-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" maxlength="11" value="<?= htmlspecialchars($cpf) ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="creci">Creci:</label>
-                <input type="text" id="creci" name="creci" minlength="2" value="<?= htmlspecialchars($creci) ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" minlength="2" value="<?= htmlspecialchars($name) ?>" required>
-            </div>
-            <button type="submit"><?= $buttonText ?></button>
-        </form>
+    <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" maxlength="11" value="<?= htmlspecialchars($cpf) ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="creci">Creci:</label>
+        <input type="text" id="creci" name="creci" minlength="2" value="<?= htmlspecialchars($creci) ?>" required>
+    </div>
+    
+    <!-- Campo de nome, sem alterações -->
+    <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" minlength="2" value="<?= htmlspecialchars($name) ?>" required>
+    </div>
+    <button type="submit"><?= $buttonText ?></button>
+</form>
 
         <?php if ($message): ?>
             <div class="message"><?= htmlspecialchars($message) ?></div>
